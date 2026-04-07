@@ -1,0 +1,98 @@
+config:
+  width: 400
+  height: 400
+  exposure_rate: 0.0008
+  wave_mode: true
+  pixel_size: 1
+
+scene:
+  objects:
+    # Левая стена
+    - shape: rect
+      material: wall
+      params:
+        min_x: 0
+        max_x: 0
+        min_y: 0
+        max_y: 400
+
+    # Правая стена
+    - shape: rect
+      material: wall
+      params:
+        min_x: 400
+        max_x: 400
+        min_y: 0
+        max_y: 400
+
+    # Верхняя стена
+    - shape: rect
+      material: wall
+      params:
+        min_x: 0
+        max_x: 400
+        min_y: 0
+        max_y: 0
+
+    # Нижняя стена
+    - shape: rect
+      material: wall
+      params:
+        min_x: 0
+        max_x: 400
+        min_y: 400
+        max_y: 400
+
+    # Лампочка (светящаяся вертикальная линия слева)
+    - shape: rect
+      material: glow
+      params:
+        min_x: 0
+        max_x: 1
+        min_y: 0
+        max_y: 400
+
+    # Первая стена с одной целью
+    - shape: rect
+      material: wall
+      params:
+        min_x: 30
+        max_x: 34
+        min_y: 0
+        max_y: 400
+
+    # Щель 0
+    - shape: rect
+      material: air
+      params:
+        min_x: 30
+        max_x: 34
+        min_y: 190
+        max_y: 210
+
+    # Основная стена с щелями
+    - shape: rect
+      material: wall
+      params:
+        min_x: 100
+        max_x: 104
+        min_y: 0
+        max_y: 400
+
+    # Щель 1
+    - shape: rect
+      material: air
+      params:
+        min_x: 100
+        max_x: 104
+        min_y: 120
+        max_y: 140
+
+    # Щель 2
+    - shape: rect
+      material: air
+      params:
+        min_x: 100
+        max_x: 104
+        min_y: 260
+        max_y: 280

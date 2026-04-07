@@ -2,6 +2,7 @@ package config
 
 import (
 	"fmt"
+	"math"
 	"strings"
 
 	"github.com/LeviyLokotb/light-automata/pkg/materials"
@@ -137,6 +138,12 @@ func parseTriangle(material materials.Material, params Params) (materials.Object
 	cy, err := params.get("cy", "triangle")
 	if err != nil {
 		return materials.Object{}, err
+	}
+
+	angle, err := params.get("rotated_by", "triangle")
+	if err == nil {
+		ag := float64(angle%360) * math.Pi / 180
+		ax, ay, bx, by, cx, cy = materials.RotateTriangleInt(ax, ay, bx, by, cx, cy, ag)
 	}
 
 	return materials.NewTriangle(material, ax, ay, bx, by, cx, cy), nil

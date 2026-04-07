@@ -111,3 +111,12 @@ func RotateTriangle(x1, y1, x2, y2, x3, y3 float64, angle float64) (float64, flo
 
 	return r1x, r1y, r2x, r2y, r3x, r3y
 }
+
+func RotateTriangleInt(x1, y1, x2, y2, x3, y3 int, angle float64) (int, int, int, int, int, int) {
+	fx1, fy1, fx2, fy2, fx3, fy3 := RotateTriangle(
+		float64(x1), float64(y1),
+		float64(x2), float64(y2),
+		float64(x3), float64(y3), angle,
+	)
+	return int(fx1), int(fy1), int(fx2), int(fy2), int(fx3), int(fy3)
+}
