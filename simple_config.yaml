@@ -1,0 +1,91 @@
+config:
+  width: 400
+  height: 400
+  exposure_rate: 0.0008
+  wave_mode: false
+  pixel_size: 1
+
+scene:
+  objects:
+    # Призма
+    - shape: triangle
+      material: glass
+      params:
+        ax: 200
+        ay: 100
+        bx: 300
+        by: 275
+        cx: 100
+        cy: 275
+
+    # Лампочка
+    - shape: rect
+      material: glow
+      params:
+        min_x: 50
+        max_x: 50
+        min_y: 130
+        max_y: 170
+
+    # Часть фонарика
+    - shape: rect
+      material: wall
+      params:
+        min_x: 0
+        max_x: 49
+        min_y: 126
+        max_y: 175
+
+    # Часть фонарика
+    - shape: rect
+      material: wall
+      params:
+        min_x: 45
+        max_x: 65
+        min_y: 172
+        max_y: 175
+
+    # Часть фонарика
+    - shape: rect
+      material: wall
+      params:
+        min_x: 45
+        max_x: 65
+        min_y: 126
+        max_y: 129
+
+    # Левая стена
+    - shape: rect
+      material: wall
+      params:
+        min_x: 0
+        max_x: 0
+        min_y: 0
+        max_y: 400
+
+    # Правая стена
+    - shape: rect
+      material: wall
+      params:
+        min_x: 400
+        max_x: 400
+        min_y: 0
+        max_y: 400
+
+    # Верхняя стена
+    - shape: rect
+      material: wall
+      params:
+        min_x: 0
+        max_x: 400
+        min_y: 0
+        max_y: 0
+
+    # Нижняя стена
+    - shape: rect
+      material: wall
+      params:
+        min_x: 0
+        max_x: 400
+        min_y: 400
+        max_y: 400

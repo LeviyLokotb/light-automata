@@ -1,11 +1,11 @@
 package config
 
 type Config struct {
-	WidthCells   int
-	HeightCells  int
-	ExposureRate float64
-	TimeSpeed    float64
-	WaveMode     bool
+	WidthCells   int     `yaml:"width"`
+	HeightCells  int     `yaml:"height"`
+	ExposureRate float64 `yaml:"exposure_rate"`
+	WaveMode     bool    `yaml:"wave_mode"`
+	PixelSize    int     `yaml:"pixel_size"`
 }
 
 func NewDefault() Config {
@@ -13,7 +13,7 @@ func NewDefault() Config {
 		WidthCells:   400,
 		HeightCells:  400,
 		ExposureRate: 8e-4,
-		TimeSpeed:    1,
 		WaveMode:     false,
+		PixelSize:    1,
 	}
 }
