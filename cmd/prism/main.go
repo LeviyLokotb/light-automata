@@ -28,7 +28,7 @@ func main() {
 	bulb := materials.NewRect(materials.GetAir().MakeGlow(), 50, 50, 130, 170)
 	// Примерно правильный треугольник
 	ax, ay, bx, by, cx, cy := 200.0, 80.0, 300.0, 255.0, 100.0, 255.0
-	axr, ayr, bxr, byr, cxr, cyr := materials.RotateTriangle(ax, ay, bx, by, cx, cy, 0.5)
+	axr, ayr, bxr, byr, cxr, cyr := materials.RotateTriangle(ax, ay, bx, by, cx, cy, 0.6)
 	prism := materials.NewTriangle(materials.GetGlass(), int(axr), int(ayr), int(bxr), int(byr), int(cxr), int(cyr))
 	objects := []materials.Object{
 		prism,
