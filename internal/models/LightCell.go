@@ -63,12 +63,22 @@ func (l LightCell) GetColorByAccumulated() [3]byte {
 
 func (l LightCell) GetColorByHeight() [3]byte {
 	color := [3]byte{}
-	for i, ch := range l.chans {
-		cv := 0
-		if ch.height > 0 {
-			cv = int(ch.height * 100)
-		}
-		color[i] = byte(cv)
+	fin_cv := 0.0
+	for _, ch := range l.chans {
+		cv := 1 / (1 + math.Exp(-ch.height))
+		// color[i] = byte(cv)
+		// if cv > fin_cv {
+		// 	fin_cv = cv
+		// }
+		fin_cv += cv
 	}
+	fin_cv /= 3
+	if fin_cv < 0.55 {
+		fin_cv = 0
+	} else {
+		fin_cv += 0.2
+	}
+	cv := byte(fin_cv * 255)
+	color = [3]byte{cv, cv, cv}
 	return color
 }
