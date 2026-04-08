@@ -67,8 +67,8 @@ scene:
       params:
         min_x: 30
         max_x: 34
-        min_y: 190
-        max_y: 210
+        min_y: 150
+        max_y: 250
 
     # Основная стена с щелями
     - shape: rect
